@@ -11,7 +11,7 @@ import TestsPanel from '@/components/TestsPanel';
 import TopicsPanel from '@/components/TopicsPanel';
 import WeeklyGoalsPanel from '@/components/WeeklyGoalsPanel';
 
-const TEST_DATE = new Date('2026-08-22');
+const TEST_DATE = new Date('2026-09-01');
 
 type Tab = 'today' | 'calendar' | 'weekly' | 'tests' | 'topics' | 'errors' | 'progress' | 'export';
 
@@ -60,7 +60,7 @@ export default function Home() {
       </div>
 
       <footer className="max-w-7xl mx-auto px-6 py-12 border-t border-ink/10 mt-12 text-xs text-muted font-mono">
-        M7 Tracker · Aug 22, 2026 · Target 328 · Baseline 296
+        M7 Tracker · Sep 1, 2026 · Target 328 · Baseline 296
       </footer>
     </main>
   );
