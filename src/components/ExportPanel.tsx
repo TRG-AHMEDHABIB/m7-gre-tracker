@@ -19,7 +19,7 @@ const TABLES: ExportTable[] = [
     description: 'Tasks — date, week, name, planned/actual minutes, done.',
     table: 'tasks',
     order: 'task_date,sort_order',
-    columns: ['task_date','week_label','day_label','task_text','task_type','minutes','actual_minutes','done'],
+    columns: ['task_date','week_label','day_label','task_text','task_type','method_step','minutes','actual_minutes','done','notes'],
   },
   {
     id: 'error_log',

@@ -164,11 +164,24 @@ export default function TodayPanel({ currentDate, setCurrentDate }: { currentDat
                     </div>
                     <div className="flex items-center gap-3 mt-2 text-xs text-muted font-mono flex-wrap">
                       <span className="border border-ink/20 px-2 py-0.5 uppercase">{t.task_type}</span>
+                      {(t as any).method_step && (
+                        <span className="border border-accent/40 text-accent px-2 py-0.5 uppercase">{(t as any).method_step}</span>
+                      )}
                       <span>{t.minutes} min planned</span>
                       <ActualTimeField task={t} onSave={(mins) => updateActualMin(t, mins)} />
 
                       {!t.done && <MoveTaskButton onMove={(days) => moveTask(t, days)} />}
                     </div>
+                    {t.notes && (
+                      <details className="mt-2 group">
+                        <summary className="text-[10px] uppercase tracking-widest text-muted font-mono cursor-pointer hover:text-ink">
+                          ✓ Done when… <span className="group-open:hidden">(tap to read)</span>
+                        </summary>
+                        <p className="mt-1 text-xs text-muted leading-relaxed border-l-2 border-ink/15 pl-3 py-1">
+                          {t.notes}
+                        </p>
+                      </details>
+                    )}
                   </div>
                 </div>
               </li>

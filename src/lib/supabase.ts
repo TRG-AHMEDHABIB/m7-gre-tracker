@@ -26,6 +26,7 @@ export interface Task {
   done_at: string | null;
   actual_minutes: number | null;
   notes: string | null;
+  method_step: string | null;
   original_date: string | null;
   rescheduled_count: number;
 }
