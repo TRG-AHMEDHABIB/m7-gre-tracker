@@ -109,7 +109,8 @@ function parseCSV(text: string): Record<string, string>[] {
 }
 
 function download(filename: string, content: string) {
-  const blob = new Blob([content], { type: 'text/csv;charset=utf-8;' });
+  // UTF-8 BOM (﻿) so Excel opens em-dashes, accents, and emoji correctly
+  const blob = new Blob(['﻿', content], { type: 'text/csv;charset=utf-8;' });
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
   a.href = url;
